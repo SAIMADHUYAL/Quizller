@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -13,6 +15,7 @@ public class MainActivity extends Activity {
 
     // TODO: Declare member variables here:
     Button mTrueButton;
+    Button mFalseButton;
 
 
     // TODO: Uncomment to create question bank
@@ -38,6 +41,22 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mTrueButton = (Button)findViewById(R.id.true_button);
+        mFalseButton = (Button)findViewById(R.id.false_button);
+
+        View.OnClickListener myListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId() == R.id.true_button) {
+                    Toast.makeText(MainActivity.this, "True Button is Clicked", Toast.LENGTH_SHORT).show();
+                }
+                if(v.getId() == R.id.false_button){
+                    Toast.makeText(MainActivity.this, "False Button Is Clicked", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+
+        mTrueButton.setOnClickListener(myListener);
+        mFalseButton.setOnClickListener(myListener);
 
 
     }
