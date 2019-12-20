@@ -12,9 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    // TODO: Declare constants here
 
-    final int PROGRESS_BAR_INCREMENT = 8;
 
     // TODO: Declare member variables here:
     Button mTrueButton;
@@ -44,6 +42,9 @@ public class MainActivity extends Activity {
             new TrueFalse(R.string.question_13,true)
     };
 
+    // TODO: Declare constants here
+
+    final int PROGRESS_BAR_INCREMENT = (int)Math.ceil(100.0/mQuestionBank.length);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
